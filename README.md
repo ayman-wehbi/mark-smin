@@ -1,6 +1,8 @@
 # Mark Smin
 
-Mark Smin is a 3D arcade shooter that features the fictional character, Mark, shooting down enemies who are trying to push him off of a cliff into an endless fall or simply knock him out. The game would start on a spacious platform where enemies would spawn to achieve their goal, and Mark would have to defend himself from them by shooting them. The platform would gradually decrease in size, making less room for Mark to maneuver. The more enemies Mark eliminates, the higher the score goes.  
+Mark Smin is a 3D arcade shooter that features the fictional character, Mark, shooting down enemies who are trying to push him off of a cliff into an endless fall or simply knock him out. The game would start on a spacious platform where enemies would spawn to achieve their goal, and Mark would have to defend himself from them by shooting them. The platform would gradually decrease in size, making less room for Mark to maneuver. The more enemies Mark eliminates, the higher the score goes. 
+
+Download playable file [HERE](https://mega.nz/folder/ijwjXBxR#gO8yTEEnA6ea1l8FXnaEiw)
 
 ### Gameplay
 Very simple and straight to the point. After hitting play, the player is greeted with a bunch of enemies to shoot at. WASD for directions, mouse to look around,m and left mouse click to shoot. One point to the score for every enemy the player kills is added. The enemies will chase the player, and every single time the enemy collides with the player, the player loses a health point and the enemy is killed, but without adding a point to the score. The goal is to kill as many enemies as possible.
