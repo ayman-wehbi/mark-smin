@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/EnemyAI/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://src/Models/Enemy-macho.gltf" type="PackedScene" id=2]
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "machorun-loop"
+
+[sub_resource type="AnimationNodeStateMachine" id=3]
+states/machorun-loop/node = SubResource( 2 )
+states/machorun-loop/position = Vector2( 559, 199 )
+start_node = "machorun-loop"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.524903
+
+[node name="Enemy" type="KinematicBody" groups=["Enemies"]]
+transform = Transform( 0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0, 0 )
+script = ExtResource( 1 )
+speed = 220
+
+[node name="Enemy-macho" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.672964, 0 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Enemy-macho"]
+tree_root = SubResource( 3 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 4 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionPolygon" type="CollisionPolygon" parent="Area"]
+transform = Transform( 0.649156, -0.760655, -3.32493e-08, 0, -4.37114e-08, 1, -0.760655, -0.649156, -2.83755e-08, 0, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 6, 100, 100, -6 )
+
+[node name="CollisionPolygon2" type="CollisionPolygon" parent="Area"]
+transform = Transform( -0.662712, 0.748875, 3.27344e-08, 0, -4.37114e-08, 1, 0.748875, 0.662712, 2.8968e-08, 0, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 6, 100, 100, -6 )
+
+[node name="CollisionPolygon3" type="CollisionPolygon" parent="Area"]
+transform = Transform( 0.754778, 0.65598, 2.86738e-08, 0, -4.37114e-08, 1, 0.65598, -0.754778, -3.29924e-08, 0, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 6, 100, 100, -6 )
+
+[node name="CollisionPolygon4" type="CollisionPolygon" parent="Area"]
+transform = Transform( -0.765258, -0.643723, -2.8138e-08, 0, -4.37114e-08, 1, -0.643723, 0.765258, 3.34505e-08, 0, 0, 0 )
+polygon = PoolVector2Array( 0, 0, 6, 100, 100, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.191369, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+
+[editable path="Enemy-macho"]

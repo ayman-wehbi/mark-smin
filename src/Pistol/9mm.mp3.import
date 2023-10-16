@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/9mm.mp3-35bb106d8cf6f165c3b93fcded209ef8.mp3str"
+
+[deps]
+
+source_file="res://src/Pistol/9mm.mp3"
+dest_files=[ "res://.import/9mm.mp3-35bb106d8cf6f165c3b93fcded209ef8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
